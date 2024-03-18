@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Size;
 @Table(name="t_Adopters")
 public class AdoptersModel extends ContactModel{
 
-    public PetTypeEnum petType;
+    public PetTypeEnum preferredPetType;
 
 public AdoptersModel(){
     super();
@@ -20,20 +20,20 @@ public AdoptersModel(){
 public AdoptersModel(String name, String address1, String address2, String city, @Size(max = 10, min = 5) String zip,
         String state, String phonenumber, String email, String imageUrl, PetTypeEnum petType) {
     super(name, address1, address2, city, zip, state, phonenumber, email, imageUrl);
-    this.petType = petType;
+    this.preferredPetType = petType;
 }
 
 public AdoptersModel(PetTypeEnum petType) {
-    this.petType = petType;
+    this.preferredPetType = petType;
 }
 
 public PetTypeEnum getPetType() {
-    return petType;
+    return preferredPetType;
 }
 
 @Override
 public String toString() {
-    return "AdoptersModel [petType=" + petType + "]";
+    return "AdoptersModel [petType=" + preferredPetType + "]";
 }
 
 
