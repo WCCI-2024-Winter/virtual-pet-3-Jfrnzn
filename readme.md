@@ -61,138 +61,159 @@ For detailed instructions on how to use the system, please refer to the user doc
 ## Models
 
 ### Cats
+
 The `Cats` entity represents domestic cats.
-  - id
-  - name
-  - breed
-  - age 
-  - health (enum) [Pet health](#pet-health)
-  - mood (enum) [Pet Moods](#pet-moods)
-  - temperment (enum) [Pet Temperaments](#pet-temperaments)
-  - Fixed (true, false)
-  - image url
-  - shelterId
+
+- id
+- name
+- breed
+- age
+- health (enum) [Pet health](#pet-health)
+- mood (enum) [Pet Moods](#pet-moods)
+- temperment (enum) [Pet Temperaments](#pet-temperaments)
+- Fixed (true, false)
+- image url
+- shelterId
   
 ### Dogs
+
 The `Dogs` entity represents various dog breeds.
-  - id
-  - name
-  - breed
-  - age 
-  - health (enum) [Pet health](#pet-health)
-  - mood (enum) [Pet Moods](#pet-moods)
-  - temperment (enum) [Pet Temperaments](#pet-temperaments)
-  - Fixed (true, false)
-  - image url
-  - list of task
-  - shelterId
+
+- id
+- name
+- breed
+- age
+- health (enum) [Pet health](#pet-health)
+- mood (enum) [Pet Moods](#pet-moods)
+- temperment (enum) [Pet Temperaments](#pet-temperaments)
+- Fixed (true, false)
+- image url
+- list of task
+- shelterId
 
 ### RoboticDogs
 
 The `RoboticDogs` entity represents robotic dogs used for various purposes.
-  - id
-  - name
-  - model
-  - manufacturer
-  - energy level
-  - oil level
-  - health (enum) [Robotic Health](#robotic-health)
-  - image url
-  - list of task
-  - shelterId
+
+- id
+- name
+- model
+- manufacturer
+- energy level
+- oil level
+- health (enum) [Robotic Health](#robotic-health)
+- image url
+- list of task
+- shelterId
 
 ### RoboticCats
 
 The `RoboticCats` entity represents robotic cats.
-  - id
-  - name
-  - model
-  - manufacturer
-  - energy level
-  - oil level
-  - health (enum) [Robotic Health](#robotic-health)
-  - image url
-  - list of task
-  - shelterId
+
+- id
+- name
+- model
+- manufacturer
+- energy level
+- oil level
+- health (enum) [Robotic Health](#robotic-health)
+- image url
+- list of task
+- shelterId
 
 ### Shelters
 
 The `Shelters` entity represents pet shelters and their information.
-  - id
-  - name
-  - address
-  - city
-  - state
-  - zip
-  - phone
-  - email
-  - list of pets
-  - Web Site
-  - image url
+
+- id
+- name
+- address
+- city
+- state
+- zip
+- phone
+- email
+- list of pets
+- Web Site
+- image url
   
 ### Volunteers
+
 The `Volunteers` entity represents individuals volunteering to care for pets.
-  - id
-  - name
-  - address
-  - city
-  - state
-  - zip
-  - phone
-  - email
-  - image url
-  - list of shelters
-  - list of pets to care for
+
+- id
+- name
+- address
+- city
+- state
+- zip
+- phone
+- email
+- image url
+- list of shelters
+- list of pets to care for
   
 ### Adopters
+
 The `Adopters` entity represents potential pet adopters and their preferences.
-  - id
-  - name
-  - address
-  - city
-  - state
-  - zip
-  - phone
-  - email
-  - perfer
-  - image url
+
+- id
+- name
+- address
+- city
+- state
+- zip
+- phone
+- email
+- perfer
+- image url
   
 ### Pet Maintenance Tasks
+
 The `Pet Maintenance Tasks` entity represents tasks related to the care and maintenance of pets.
-  - id
-  - name
-  - frequency
-  - type of pet
-  - effected property
+
+- id
+- name
+- frequency
+- type of pet
+- effected property
 
 ### Pet Schedule Tasks
+
 The `Pet Schedule Tasks` entity represents schedule tasks related to the care and maintenance of pets.
-  - id
-  - volunteer Id
-  - pet id
-  - task id
-  - next schedule time
+
+- id
+- volunteer Id
+- pet id
+- task id
+- next schedule time
 
 ## Enums
+
 ### Pet Temperaments
+
 ![Alt text](image.png)
 
 ### Pet Moods
+
 ![Alt text](image-1.png)
 
 ### Pet health
+
     HEALTHY
     HUNGRY
     SICK
     DEAD
 
-### Robotic Health 
+### Robotic Health
+
     NORMAL
     LOW_BATTERY
     MALFUNCTION
     DESTROYED
 
 ## User Stories
+
 **You should have Junit Test for all of the user stories**
 
     1. As a shelter manager, I want to be able to add a new pet (Cat, Dog, RoboticDog, RoboticCat) to the system so that I can keep track of all the pets in the shelter.

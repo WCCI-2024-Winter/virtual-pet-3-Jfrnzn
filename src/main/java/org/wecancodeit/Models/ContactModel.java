@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.Size;
 
- @MappedSuperclass
+@MappedSuperclass
 public abstract class ContactModel {
     @Id
     @GeneratedValue()
@@ -20,8 +20,8 @@ public abstract class ContactModel {
     @Column(length = 50, nullable = true)
     private String city;
     @Column(length = 10, nullable = true)
-    @Size(max=10, min=5)
-    private String  zip;
+    @Size(max = 10, min = 5)
+    private String zip;
     @Column(length = 2, nullable = true)
     private String state;
     @Column(length = 10, nullable = true)
@@ -97,7 +97,5 @@ public abstract class ContactModel {
                 + ", city=" + city + ", zip=" + zip + ", state=" + state + ", phonenumber=" + phonenumber + ", email="
                 + email + ", imageUrl=" + imageUrl + "]";
     }
-    
 
-    
 }

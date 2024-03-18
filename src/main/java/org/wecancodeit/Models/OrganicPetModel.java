@@ -1,5 +1,7 @@
 package org.wecancodeit.Models;
 
+import java.util.ArrayList;
+
 import org.wecancodeit.Models.Enums.PetHealthEnum;
 import org.wecancodeit.Models.Enums.PetMoodEnum;
 import org.wecancodeit.Models.Enums.PetTempermentEnum;
@@ -7,6 +9,7 @@ import org.wecancodeit.Models.Enums.PetTypeEnum;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -16,10 +19,6 @@ import jakarta.validation.constraints.Min;
 @Entity
 @Table(name = "t_OrganicPet")
 public class OrganicPetModel extends PetModel {
-    public OrganicPetModel(String name, PetTypeEnum petType, String imageUrl) {
-        super(name, petType, imageUrl);
-        // TODO Auto-generated constructor stub
-    }
 
     @Column(length = 50, nullable = false)
     private String petBreed;
@@ -31,10 +30,18 @@ public class OrganicPetModel extends PetModel {
     private PetTempermentEnum petTemperment;
     private boolean petFixed;
 
+    @ManyToOne
+    private ShelterModel shelterModel;
+
+  public OrganicPetModel() {
+        super();
+ 
+    }
     public OrganicPetModel(String name, PetTypeEnum petType, String imageUrl, String petBreed,
-            @Min(0) @Max(25) int petAge, PetHealthEnum petHealth, PetMoodEnum petMood, PetTempermentEnum petTemperment,
-            boolean petFixed) {
-        super(name, petType, imageUrl);
+            int petAge, PetHealthEnum petHealth, PetMoodEnum petMood, PetTempermentEnum petTemperment,
+            boolean petFixed,ArrayList<Long> scheduledTaskIds,
+            ArrayList<Long> maintenanceTaskIds ) {
+        super(name, petType, imageUrl, scheduledTaskIds, maintenanceTaskIds);
         this.petBreed = petBreed;
         this.petAge = petAge;
         this.petHealth = petHealth;
@@ -42,6 +49,8 @@ public class OrganicPetModel extends PetModel {
         this.petTemperment = petTemperment;
         this.petFixed = petFixed;
     }
+
+  
 
     public String getPetBreed() {
         return petBreed;
@@ -65,6 +74,12 @@ public class OrganicPetModel extends PetModel {
 
     public boolean isPetFixed() {
         return petFixed;
+    }
+    @Override
+    public String toString() {
+        return super.toString() + "OrganicPetModel [petBreed=" + petBreed + ", petAge=" + petAge + ", petHealth=" + petHealth
+                + ", petMood=" + petMood + ", petTemperment=" + petTemperment + ", petFixed=" + petFixed
+                + ", shelterModel=" + shelterModel + "]";
     }
 
 }
