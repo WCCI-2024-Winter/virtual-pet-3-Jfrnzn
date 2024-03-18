@@ -39,9 +39,9 @@ The Virtual Pet Management System is a comprehensive platform for managing pets,
 - Schedule and track pet maintenance tasks.
 - Admit new pets to shelters and update their information.
 - Each Pet will have a tick event based on time.
-  - pets will need maintance items perform by a volunteer
+  - pets will need maintenance items perform by a volunteer
   - if the pet is not cared for it could pass away.
-- Each Volunteer will have a tice event base on time.
+- Each Volunteer will have a tick event base on time.
   - volunteers will have schedule task to perform.
 - Time based each minute real time = 5 hours of shelter time.
 
