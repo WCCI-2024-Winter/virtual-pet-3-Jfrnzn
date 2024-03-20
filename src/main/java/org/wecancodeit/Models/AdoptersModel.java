@@ -1,5 +1,6 @@
 package org.wecancodeit.Models;
 
+import org.wecancodeit.Models.Enums.AdoptionStatusEnum;
 import org.wecancodeit.Models.Enums.PetTypeEnum;
 
 import jakarta.persistence.Entity;
@@ -12,6 +13,7 @@ import jakarta.validation.constraints.Size;
 public class AdoptersModel extends ContactModel {
 
     public PetTypeEnum preferredPetType;
+    private AdoptionStatusEnum adoptionStatus;
 
     @ManyToOne
     private ShelterModel shelterModel;
@@ -22,9 +24,11 @@ public class AdoptersModel extends ContactModel {
 
     public AdoptersModel(String name, String address1, String address2, String city,
             @Size(max = 10, min = 5) String zip,
-            String state, String phonenumber, String email, String imageUrl, PetTypeEnum petType) {
+            String state, String phonenumber, String email, String imageUrl, PetTypeEnum petType,
+            AdoptionStatusEnum adoptionStatus) {
         super(name, address1, address2, city, zip, state, phonenumber, email, imageUrl);
         this.preferredPetType = petType;
+        this.adoptionStatus = adoptionStatus;
     }
 
     public AdoptersModel(PetTypeEnum petType) {
@@ -37,7 +41,10 @@ public class AdoptersModel extends ContactModel {
 
     @Override
     public String toString() {
-        return "AdoptersModel [petType=" + preferredPetType + "]";
+        return "AdoptersModel [preferredPetType=" + preferredPetType + ", adoptionStatus=" + adoptionStatus
+                + ", shelterModel=" + shelterModel + "]";
     }
+
+    
 
 }

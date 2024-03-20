@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "t_Schedule")
-public class ScheduleModel {
+public class PetTaskScheduleModel {
     @Id
     @GeneratedValue()
     private long id;
@@ -17,10 +17,10 @@ public class ScheduleModel {
 
     private Date nextScheduledTime;
 
-    public ScheduleModel() {
+    public PetTaskScheduleModel() {
     }
 
-    public ScheduleModel(long volunteerId, long petId, long taskId, Date nextScheduledTime) {
+    public PetTaskScheduleModel(long volunteerId, long petId, long taskId, Date nextScheduledTime) {
         VolunteerId = volunteerId;
         this.petId = petId;
         this.taskId = taskId;
