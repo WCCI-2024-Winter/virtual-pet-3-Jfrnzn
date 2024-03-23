@@ -44,15 +44,15 @@ public class AdopterService {
         return adopter;
     }
 
-    public Iterable<AdoptersModel> findByName(String name, String zip) {
+    public Iterable<AdoptersModel> findByName(String name/** Stringzip */
+    ) {
         Iterable<AdoptersModel> adopters = new ArrayList<>();
         try {
-            if (zip != null && zip.length() > 2) {
-                zip = zip.substring(0, 2);
-                adopters = adopterRepository.findByNameZip(name, zip);
-            } else {
-                adopters = adopterRepository.findByName(name);
-            }
+            // if (zip != null && zip.length() > 2) {
+            // zip = zip.substring(0, 2);
+            // adopters = adopterRepository.findByNameZip(name, zip);
+            // } else {
+            adopters = adopterRepository.findByName(name);
         } catch (Exception ex) {
             throw ex;
         }
@@ -86,16 +86,15 @@ public class AdopterService {
         return adopter;
     }
 
-    
-    public Iterable<AdoptersModel> findByPreferredPetType(String preferredPetType, String zip) {
+    public Iterable<AdoptersModel> findByPreferredPetType(String preferredPetType/** , String zip */
+    ) {
         Iterable<AdoptersModel> adopters = new ArrayList<>();
         try {
-            if (zip != null && zip.length() > 2) {
-                zip = zip.substring(0, 2);
-                adopters = adopterRepository.findPreferredPetType(preferredPetType, zip);
-            } else {
-                adopters = adopterRepository.findPreferredPetType(preferredPetType);
-            }
+            // if (zip != null && zip.length() > 2) {
+            // zip = zip.substring(0, 2);
+            // adopters = adopterRepository.findPreferredPetType(preferredPetType, zip);
+            // } else {
+            adopters = adopterRepository.findByPreferredPetType(preferredPetType);
         } catch (Exception ex) {
             throw ex;
         }

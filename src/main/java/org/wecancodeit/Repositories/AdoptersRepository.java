@@ -3,6 +3,7 @@ package org.wecancodeit.Repositories;
 import org.springframework.data.repository.CrudRepository;
 import org.wecancodeit.Models.AdoptersModel;
 
+
 public interface AdoptersRepository extends CrudRepository<AdoptersModel, Long> {
     /**
      * 
@@ -16,8 +17,9 @@ public interface AdoptersRepository extends CrudRepository<AdoptersModel, Long> 
      * @param name
      * @param zip
      * @return
+     *         //
      */
-    Iterable<AdoptersModel> findByNameZip(String name, String zip);
+    // Iterable<AdoptersModel> findByNameZip(String name, String zip);
 
     /**
      * 
@@ -25,7 +27,8 @@ public interface AdoptersRepository extends CrudRepository<AdoptersModel, Long> 
      * @return
      */
 
-    Iterable<AdoptersModel> findPreferredPetType(String preferredPetType);
+    /** changed pet type from string to the enum */
+    Iterable<AdoptersModel> findByPreferredPetType(String preferredPetType);
 
     /**
      * 
@@ -34,6 +37,7 @@ public interface AdoptersRepository extends CrudRepository<AdoptersModel, Long> 
      * @return
      */
 
-    Iterable<AdoptersModel> findPreferredPetType(String preferredPetType, String zip);
+    // Iterable<AdoptersModel> findPreferredPetType(String preferredPetType, String
+    // zip);
 
 }

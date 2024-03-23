@@ -60,16 +60,16 @@ public class VolunteerService {
      * @param zip
      * @return
      */
-    public Iterable<VolunteerModel> findByName(String name, String zip) {
+    public Iterable<VolunteerModel> findByName(String name/** , String zip*/) {
         Iterable<VolunteerModel> volunteer = new ArrayList<>();
         try {
-            if (zip != null && zip.length() > 2) {
-                zip = zip.substring(0, 2);
-                volunteer = volunteerRepository.findByNameZip(name, zip);
-            } else {
+            // if (zip != null && zip.length() > 2) {
+            //     zip = zip.substring(0, 2);
+            //     // volunteer = volunteerRepository.findByNameZip(name, zip);
+            // } else {
                 volunteer = volunteerRepository.findByName(name);
             }
-        } catch (Exception ex) {
+        /**}*/ catch (Exception ex) {
             throw ex;
         }
         return volunteer;

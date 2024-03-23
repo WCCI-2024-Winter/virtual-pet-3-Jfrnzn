@@ -47,45 +47,47 @@ public class PetTaskScheduleService {
      * @param id
      * @return
      */
-    public Iterable<PetTaskScheduleModel> findByVolunteerId(Long id) {
+    public Iterable<PetTaskScheduleModel> findByVolunteerId(Long volunteerId) {
         Iterable<PetTaskScheduleModel> schedule = null;
         try {
-            schedule = petScheduleRepository.findByVolunteerId(id);
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return schedule;
-    }
-/**
- * 
- * @param id
- * @return
- */
-    public Iterable<PetTaskScheduleModel> findByPetId(Long id) {
-        Iterable<PetTaskScheduleModel> schedule = null;
-        try {
-            schedule = petScheduleRepository.findByPetId(id);
-        } catch (Exception ex) {
-            throw ex;
-        }
-        return schedule;
-    }
-/**
- * 
- * @param id
- * @return
- */
-    public Iterable<PetTaskScheduleModel> findByTaskId(Long id) {
-        Iterable<PetTaskScheduleModel> schedule = null;
-        try {
-            schedule = petScheduleRepository.findByTaskId(id);
+            schedule = petScheduleRepository.findByVolunteerId(volunteerId);
         } catch (Exception ex) {
             throw ex;
         }
         return schedule;
     }
 
-      public boolean deleteSchedule(long id) {
+    /**
+     * 
+     * @param id
+     * @return
+     */
+    public Iterable<PetTaskScheduleModel> findByPetId(Long petId) {
+        Iterable<PetTaskScheduleModel> schedule = null;
+        try {
+            schedule = petScheduleRepository.findByPetId(petId);
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return schedule;
+    }
+
+    /**
+     * 
+     * @param taskId
+     * @return
+     */
+    public Iterable<PetTaskScheduleModel> findByTaskId(Long taskId) {
+        Iterable<PetTaskScheduleModel> schedule = null;
+        try {
+            schedule = petScheduleRepository.findByTaskId(taskId);
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return schedule;
+    }
+
+    public boolean deleteSchedule(long id) {
         boolean result = false;
         try {
             petScheduleRepository.deleteById(id);
@@ -98,6 +100,7 @@ public class PetTaskScheduleService {
         }
         return result;
     }
+
     public PetTaskScheduleModel savePetSchedule(PetTaskScheduleModel schedule) {
         try {
             if (BaseService.isValidPetTaskSchedule(schedule)) {
@@ -106,7 +109,6 @@ public class PetTaskScheduleService {
         } catch (Exception ex) {
             throw ex;
         }
-
         return schedule;
     }
 }

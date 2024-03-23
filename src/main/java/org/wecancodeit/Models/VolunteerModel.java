@@ -11,7 +11,7 @@ import jakarta.validation.constraints.Size;
 
 public class VolunteerModel extends ContactModel {
 
-    @ManyToMany(mappedBy = "volunteers")
+    @ManyToMany(mappedBy = "volunteerModel")
     private Collection<ShelterModel> shelterModel;
 
     public VolunteerModel() {

@@ -21,7 +21,7 @@ import jakarta.validation.constraints.Min;
 public class OrganicPetModel extends PetModel {
 
     @Column(length = 50, nullable = false)
-    private String petBreed;
+    private String breed;
     @Min(0)
     @Max(25)
     private int petAge;
@@ -33,16 +33,16 @@ public class OrganicPetModel extends PetModel {
     @ManyToOne
     private ShelterModel shelterModel;
 
-  public OrganicPetModel() {
+    public OrganicPetModel() {
         super();
- 
+
     }
-    public OrganicPetModel(String name, PetTypeEnum petType, String imageUrl, String petBreed,
+
+    public OrganicPetModel(String name, PetTypeEnum petType, String imageUrl, String breed,
             int petAge, PetHealthEnum petHealth, PetMoodEnum petMood, PetTempermentEnum petTemperment,
-            boolean petFixed,ArrayList<Long> scheduledTaskIds,
-            ArrayList<Long> maintenanceTaskIds ) {
-        super(name, petType, imageUrl, scheduledTaskIds, maintenanceTaskIds);
-        this.petBreed = petBreed;
+            boolean petFixed, ArrayList<Long> scheduledTaskIds) {
+        super(name, petType, imageUrl, scheduledTaskIds);
+        this.breed = breed;
         this.petAge = petAge;
         this.petHealth = petHealth;
         this.petMood = petMood;
@@ -50,10 +50,8 @@ public class OrganicPetModel extends PetModel {
         this.petFixed = petFixed;
     }
 
-  
-
     public String getPetBreed() {
-        return petBreed;
+        return breed;
     }
 
     public int getPetAge() {
@@ -75,9 +73,11 @@ public class OrganicPetModel extends PetModel {
     public boolean isPetFixed() {
         return petFixed;
     }
+
     @Override
     public String toString() {
-        return super.toString() + "OrganicPetModel [petBreed=" + petBreed + ", petAge=" + petAge + ", petHealth=" + petHealth
+        return super.toString() + "OrganicPetModel [petBreed=" + breed + ", petAge=" + petAge + ", petHealth="
+                + petHealth
                 + ", petMood=" + petMood + ", petTemperment=" + petTemperment + ", petFixed=" + petFixed
                 + ", shelterModel=" + shelterModel + "]";
     }

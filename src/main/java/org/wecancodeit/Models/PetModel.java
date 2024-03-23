@@ -15,18 +15,17 @@ public abstract class PetModel {
     private String name;
     private PetTypeEnum petType;
     private String imageUrl;
-    private ArrayList<Long> maintenanceTaskIds;
+    
     private ArrayList<Long> scheduledTaskIds;
 
     public PetModel() {
     }
 
-    public PetModel(String name, PetTypeEnum petType, String imageUrl, ArrayList<Long> scheduledTaskIds,
-            ArrayList<Long> maintenanceTaskIds) {
+    public PetModel(String name, PetTypeEnum petType, String imageUrl, ArrayList<Long> scheduledTaskIds) {
         this.name = name;
         this.petType = petType;
         this.imageUrl = imageUrl;
-        this.maintenanceTaskIds = maintenanceTaskIds;
+       
         this.scheduledTaskIds = scheduledTaskIds;
     }
 
@@ -34,9 +33,7 @@ public abstract class PetModel {
         this.id = id;
     }
 
-    public ArrayList<Long> getMaintenanceTaskIds() {
-        return maintenanceTaskIds;
-    }
+
 
     public ArrayList<Long> getScheduledTaskIds() {
         return scheduledTaskIds;

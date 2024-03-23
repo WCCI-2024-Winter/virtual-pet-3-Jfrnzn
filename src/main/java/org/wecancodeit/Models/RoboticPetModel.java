@@ -17,20 +17,20 @@ import jakarta.validation.constraints.Min;
 public class RoboticPetModel extends PetModel {
 
     @Column(length = 50, nullable = false)
-    private String petModel;
+    private String model;
 
     @Column(length = 50, nullable = false)
-    private String petManufacturer;
+    private String manufacturer;
 
     @Min(0)
     @Max(100)
     @Column(nullable = false)
-    private int petEnergyLevel;
+    private int energyLevel;
 
     @Min(0)
     @Max(100)
     @Column(nullable = false)
-    private int petOilLevel;
+    private int oilLevel;
 
     @ManyToOne
     private ShelterModel shelterModel;
@@ -43,22 +43,21 @@ public class RoboticPetModel extends PetModel {
 
     public RoboticPetModel(String name, PetTypeEnum petType, String imageUrl, String petModel, String petManufacturer,
             @Min(0) @Max(100) int petEnergyLevel, @Min(0) @Max(100) int petOilLevel,
-            RoboticHealthEnum roboticPetHealth,ArrayList<Long> scheduledTaskIds,
-            ArrayList<Long> maintenanceTaskIds) {
-        super(name, petType, imageUrl, scheduledTaskIds,
-        maintenanceTaskIds);
-        this.petModel = petModel;
-        this.petManufacturer = petManufacturer;
-        this.petEnergyLevel = petEnergyLevel;
-        this.petOilLevel = petOilLevel;
+            RoboticHealthEnum roboticPetHealth,ArrayList<Long> scheduledTaskIds) {
+        super(name, petType, imageUrl, scheduledTaskIds);
+        this.model = petModel;
+        this.manufacturer = petManufacturer;
+        this.energyLevel = petEnergyLevel;
+        this.oilLevel = petOilLevel;
         this.roboticPetHealth = roboticPetHealth;
+        
     }
 
     @Override
     public String toString() {
-        return super.toString() + "RoboticPetModel [petModel=" + petModel + ", petManufacturer=" + petManufacturer
+        return super.toString() + "RoboticPetModel [petModel=" + model + ", petManufacturer=" + manufacturer
                 + ", petEnergyLevel="
-                + petEnergyLevel + ", petOilLevel=" + petOilLevel + ", roboticPetHealth=" + roboticPetHealth + "]";
+                + energyLevel + ", petOilLevel=" + oilLevel + ", roboticPetHealth=" + roboticPetHealth + "]";
     }
 
 }

@@ -19,5 +19,5 @@ public interface VolunteerRepository extends CrudRepository<VolunteerModel, Long
      * @param zip
      * @return
      */
-    Iterable<VolunteerModel> findByNameZip(String name, String zip);
+    // Iterable<VolunteerModel> findByNameZip(String name, String zip);
 }

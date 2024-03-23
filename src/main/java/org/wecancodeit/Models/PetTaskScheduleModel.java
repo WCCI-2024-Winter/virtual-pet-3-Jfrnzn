@@ -11,7 +11,7 @@ public class PetTaskScheduleModel {
     @GeneratedValue()
     private long id;
 
-    private long VolunteerId;
+    private long volunteerId;
     private long petId;
     private long taskId;
 
@@ -21,7 +21,7 @@ public class PetTaskScheduleModel {
     }
 
     public PetTaskScheduleModel(long volunteerId, long petId, long taskId, Date nextScheduledTime) {
-        VolunteerId = volunteerId;
+        this.volunteerId = volunteerId;
         this.petId = petId;
         this.taskId = taskId;
         this.nextScheduledTime = nextScheduledTime;
@@ -36,7 +36,7 @@ public class PetTaskScheduleModel {
     }
 
     public long getVolunteerId() {
-        return VolunteerId;
+        return volunteerId;
     }
 
     public long getPetId() {
@@ -53,7 +53,7 @@ public class PetTaskScheduleModel {
 
     @Override
     public String toString() {
-        return "ScheduleModel [id=" + id + ", VolunteerId=" + VolunteerId + ", petId=" + petId + ", taskId=" + taskId
+        return "ScheduleModel [id=" + id + ", VolunteerId=" + volunteerId + ", petId=" + petId + ", taskId=" + taskId
                 + ", nextScheduledTime=" + nextScheduledTime + "]";
     }
 

@@ -22,6 +22,21 @@ public class AdoptersModel extends ContactModel {
         super();
     }
 
+    /**
+     * 
+     * @param name
+     * @param address1
+     * @param address2
+     * @param city
+     * @param zip
+     * @param state
+     * @param phonenumber
+     * @param email
+     * @param imageUrl
+     * @param petType
+     * @param adoptionStatus
+     */
+
     public AdoptersModel(String name, String address1, String address2, String city,
             @Size(max = 10, min = 5) String zip,
             String state, String phonenumber, String email, String imageUrl, PetTypeEnum petType,
@@ -44,7 +59,5 @@ public class AdoptersModel extends ContactModel {
         return "AdoptersModel [preferredPetType=" + preferredPetType + ", adoptionStatus=" + adoptionStatus
                 + ", shelterModel=" + shelterModel + "]";
     }
-
-    
 
 }
