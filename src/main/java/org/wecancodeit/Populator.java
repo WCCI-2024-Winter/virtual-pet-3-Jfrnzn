@@ -60,10 +60,10 @@ public class Populator implements CommandLineRunner {
         @Override
         public void run(String... args) throws Exception {
 
-
-                /**Each table will have its own unique id, so each new model will start at 1l, then 2l then 3l etc.  */
-
-
+                /**
+                 * Each table will have its own unique id, so each new model will start at 1l,
+                 * then 2l then 3l etc.
+                 */
 
                 /** Shelter populator */
                 // Shelter 1
@@ -76,35 +76,36 @@ public class Populator implements CommandLineRunner {
                 // Shelter 2
                 ShelterModel shelterModel2 = new ShelterModel("Furry Friends Shelter", "456 Oak Avenue", "Apt 200",
                                 "Townsville", "54321",
-                                "texas", "9876543210", "info@furryfriends.com", "furry-friends_5678-1234.avif",
+                                "TX", "9876543210", "info@furryfriends.com", "furry-friends_5678-1234.avif",
                                 "https://www.furryfriends.org");
                 shelterModel.setId(2L);
-                shelterService.saveShelter(shelterModel);
+                shelterService.saveShelter(shelterModel2);
 
                 // Shelter 3
                 ShelterModel shelterModel3 = new ShelterModel("Pawsome Refuge", "789 Elm Street", "Unit 300",
                                 "Villageville",
-                                "67890", "ohio", "4567890123", "info@pawsome.org", "pawsome-refuge_9012-3456.avif",
+                                "67890", "oh", "4567890123", "info@pawsome.org", "pawsome-refuge_9012-3456.avif",
                                 "https://www.pawsome.org");
                 shelterModel.setId(3L);
-                shelterService.saveShelter(shelterModel);
+                shelterService.saveShelter(shelterModel3);
 
                 // Shelter 4
                 ShelterModel shelterModel4 = new ShelterModel("Pet Haven", "123 Main Street", "Suite 100", "Cityville",
-                                "90210", "california", "1234567890", "info@pethaven.com", "pet-haven_1234-5678.avif",
+                                "90210", "ca", "1234567890", "info@pethaven.com", "pet-haven_1234-5678.avif",
                                 "https://www.pethaven.com");
                 shelterModel.setId(4l);
-                shelterService.saveShelter(shelterModel);
+                shelterService.saveShelter(shelterModel4);
 
                 AdoptersModel adoptersModel = new AdoptersModel("Adopter 1", "123 adopter st", "adopter 3nd address",
-                                "adopter city", "12345","ohio","9377371111", "adopterEmail.com", "adopter.jpg", PetTypeEnum.DOG, AdoptionStatusEnum.PENDING);
+                                "adopter city", "12345", "oh", "9377371111", "adopterEmail.com", "adopter.jpg",
+                                PetTypeEnum.DOG, AdoptionStatusEnum.PENDING);
                 adoptersModel.setId(1l);
+                adoptersModel.saveShelterModel(shelterModel2);
                 adopterService.saveAdopter(adoptersModel);
-              
 
                 VolunteerModel volunteerModel = new VolunteerModel("Volly", "123 Address", "Add 2", "VolunteerCity",
                                 "22222",
-                                "volunteerState", "1234566789", "VolunteerEmail@gmail.com", "volunteer.jpg");
+                                "VA", "1234566789", "VolunteerEmail@gmail.com", "volunteer.jpg");
                 volunteerModel.setId(1l);
                 volunteerService.saveVolunteer(volunteerModel);
                 /**
@@ -117,6 +118,7 @@ public class Populator implements CommandLineRunner {
                                 null);
                 organicPetModel.setId(1l);
                 organicPetService.saveOrganicPet(organicPetModel);
+
                 // /**
                 // * Robotic Pet Populator
                 // */

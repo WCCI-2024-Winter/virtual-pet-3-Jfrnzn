@@ -15,7 +15,6 @@ public abstract class PetModel {
     private String name;
     private PetTypeEnum petType;
     private String imageUrl;
-    
     private ArrayList<Long> scheduledTaskIds;
 
     public PetModel() {
@@ -28,6 +27,7 @@ public abstract class PetModel {
        
         this.scheduledTaskIds = scheduledTaskIds;
     }
+    
 
     public void setId(long id) {
         this.id = id;

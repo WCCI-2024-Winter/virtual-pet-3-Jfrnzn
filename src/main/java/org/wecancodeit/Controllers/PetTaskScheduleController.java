@@ -13,7 +13,7 @@ import org.wecancodeit.Services.PetTaskScheduleService;
 import jakarta.annotation.Resource;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1/scheduleTasks/")
 public class PetTaskScheduleController {
 
     @Resource

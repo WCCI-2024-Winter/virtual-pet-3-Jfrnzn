@@ -14,7 +14,7 @@ import org.wecancodeit.Services.RoboticPetService;
 import jakarta.annotation.Resource;
 
 @RestController
-@RequestMapping("/api/v1/RoboticPet/")
+@RequestMapping("/api/v1/RoboticPets/")
 public class RoboticPetController {
 
     @Resource
@@ -30,8 +30,8 @@ public class RoboticPetController {
     }
 
     @GetMapping("{breed}")
-    public Iterable<RoboticPetModel> getRoboticPetByManufacturer(@PathVariable String breed) {
-        return roboticPetService.findByManufacturer(breed);
+    public Iterable<RoboticPetModel> getRoboticPetByManufacturer(@PathVariable String manufacturer) {
+        return roboticPetService.findByManufacturer(manufacturer);
     }
 
     @GetMapping("{id}")

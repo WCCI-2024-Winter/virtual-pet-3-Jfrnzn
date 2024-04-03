@@ -41,21 +41,47 @@ public class RoboticPetModel extends PetModel {
         super();
     }
 
-    public RoboticPetModel(String name, PetTypeEnum petType, String imageUrl, String petModel, String petManufacturer,
-            @Min(0) @Max(100) int petEnergyLevel, @Min(0) @Max(100) int petOilLevel,
+    public RoboticPetModel(String name, PetTypeEnum petType, String imageUrl, String model, String manufacturer,
+            @Min(0) @Max(100) int energyLevel, @Min(0) @Max(100) int oilLevel,
             RoboticHealthEnum roboticPetHealth,ArrayList<Long> scheduledTaskIds) {
         super(name, petType, imageUrl, scheduledTaskIds);
-        this.model = petModel;
-        this.manufacturer = petManufacturer;
-        this.energyLevel = petEnergyLevel;
-        this.oilLevel = petOilLevel;
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.energyLevel = energyLevel;
+        this.oilLevel = oilLevel;
         this.roboticPetHealth = roboticPetHealth;
         
+    }
+    
+
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public int getEnergyLevel() {
+        return energyLevel;
+    }
+
+    public int getOilLevel() {
+        return oilLevel;
+    }
+
+    public ShelterModel getShelterModel() {
+        return shelterModel;
+    }
+
+    public RoboticHealthEnum getRoboticPetHealth() {
+        return roboticPetHealth;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "RoboticPetModel [petModel=" + model + ", petManufacturer=" + manufacturer
+        return super.toString() + "RoboticPetModel [petModel=" + model + ", Manufacturer=" + manufacturer
                 + ", petEnergyLevel="
                 + energyLevel + ", petOilLevel=" + oilLevel + ", roboticPetHealth=" + roboticPetHealth + "]";
     }

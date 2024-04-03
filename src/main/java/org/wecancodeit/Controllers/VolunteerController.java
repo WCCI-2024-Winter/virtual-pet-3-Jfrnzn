@@ -14,7 +14,7 @@ import org.wecancodeit.Services.VolunteerService;
 import jakarta.annotation.Resource;
 
 @RestController
-@RequestMapping("/api/v1/Volunteers/")
+@RequestMapping("/api/v1/volunteers/")
 public class VolunteerController {
 
     @Resource

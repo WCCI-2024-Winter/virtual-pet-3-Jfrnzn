@@ -3,6 +3,8 @@ package org.wecancodeit.Models;
 import org.wecancodeit.Models.Enums.AdoptionStatusEnum;
 import org.wecancodeit.Models.Enums.PetTypeEnum;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -44,6 +46,10 @@ public class AdoptersModel extends ContactModel {
         super(name, address1, address2, city, zip, state, phonenumber, email, imageUrl);
         this.preferredPetType = petType;
         this.adoptionStatus = adoptionStatus;
+    }
+    @JsonIgnore
+    public void saveShelterModel(ShelterModel shelterModel){
+        this.shelterModel = shelterModel;
     }
 
     public AdoptersModel(PetTypeEnum petType) {

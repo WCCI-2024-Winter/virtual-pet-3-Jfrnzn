@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/v1/Shelter/")
+@RequestMapping("/api/v1/shelters/")
 public class ShelterController {
 
     @Resource
@@ -33,12 +33,12 @@ public class ShelterController {
         return shelterService.findById(id);
     }
 
-    @GetMapping("{name}")
+    @GetMapping("name/{name}")
     public Iterable<ShelterModel> getByName(@PathVariable String name) {
         return shelterService.findByName(name);
     }
 
-    @GetMapping("{zip}")
+    @GetMapping("zip/{zip}")
     public Iterable<ShelterModel> getByZip(@PathVariable String zip) {
         return shelterService.findByZip(zip);
     }

@@ -22,14 +22,14 @@ public class RoboticPetService {
     }
 
     public Iterable<RoboticPetModel> findAll() {
-        Iterable<RoboticPetModel> Opet = new ArrayList<>();
+        Iterable<RoboticPetModel> pet = new ArrayList<>();
         try {
-            Opet = roboticPetRepository.findAll();
+            pet = roboticPetRepository.findAll();
 
         } catch (Exception ex) {
             throw ex;
         }
-        return Opet;
+        return pet;
     }
 
     public RoboticPetModel findById(Long id) {
@@ -71,10 +71,10 @@ public class RoboticPetService {
         return pet;
     }
 
-    public Iterable<RoboticPetModel> findByManufacturer(String petManufacturer) {
+    public Iterable<RoboticPetModel> findByManufacturer(String manufacturer) {
         Iterable<RoboticPetModel> pets = new ArrayList<>();
         try {
-            pets = roboticPetRepository.findByManufacturer(petManufacturer);
+            pets = roboticPetRepository.findByManufacturer(manufacturer);
         } catch (Exception ex) {
             throw ex;
         }

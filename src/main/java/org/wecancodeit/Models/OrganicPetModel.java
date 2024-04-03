@@ -50,7 +50,7 @@ public class OrganicPetModel extends PetModel {
         this.petFixed = petFixed;
     }
 
-    public String getPetBreed() {
+    public String getBreed() {
         return breed;
     }
 
