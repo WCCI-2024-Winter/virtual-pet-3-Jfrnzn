@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "t_Shelter")
@@ -30,9 +30,9 @@ public class ShelterModel extends ContactModel {
 
     }
 
-    public ShelterModel(String name, String address1, String address2, String city, @Size(max = 10, min = 5) String zip,
-            String state, String phonenumber, String email, String imageUrl, String website) {
-        super(name, address1, address2, city, zip, state, phonenumber, email, imageUrl);
+    public ShelterModel(String name, String address1, String address2, String city, String zip,
+            String state, String phoneNumber, String email, String imageUrl, String website) {
+        super(name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
         this.website = website;
         this.organicPets = new ArrayList<>();
         this.roboticPets = new ArrayList<>();

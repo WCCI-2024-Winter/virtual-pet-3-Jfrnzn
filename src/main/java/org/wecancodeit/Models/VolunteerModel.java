@@ -20,8 +20,8 @@ public class VolunteerModel extends ContactModel {
 
     public VolunteerModel(String name, String address1, String address2, String city,
             @Size(max = 10, min = 5) String zip,
-            String state, String phonenumber, String email, String imageUrl) {
-        super(name, address1, address2, city, zip, state, phonenumber, email, imageUrl);
+            String state, String phoneNumber, String email, String imageUrl) {
+        super(name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
 
     }
 

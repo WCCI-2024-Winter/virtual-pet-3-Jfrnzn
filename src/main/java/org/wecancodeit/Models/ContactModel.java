@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Size;
 public abstract class ContactModel {
     @Id
     @GeneratedValue()
-    private Long id;
+    private long id;
     @Column(length = 50, nullable = false)
     private String name;
     @Column(length = 150, nullable = false)
@@ -25,7 +25,7 @@ public abstract class ContactModel {
     @Column(length = 2, nullable = true)
     private String state;
     @Column(length = 10, nullable = true)
-    private String phonenumber;
+    private String phoneNumber;
     @Column(length = 50, nullable = false)
     private String email;
 
@@ -35,14 +35,14 @@ public abstract class ContactModel {
     }
 
     public ContactModel(String name, String address1, String address2, String city, @Size(max = 10, min = 5) String zip,
-            String state, String phonenumber, String email, String imageUrl) {
+            String state, String phoneNumber, String email, String imageUrl) {
         this.name = name;
         this.address1 = address1;
         this.address2 = address2;
         this.city = city;
         this.zip = zip;
         this.state = state;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phoneNumber;
         this.email = email;
         this.imageUrl = imageUrl;
     }
@@ -79,8 +79,8 @@ public abstract class ContactModel {
         return state;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public String getEmail() {
@@ -94,7 +94,7 @@ public abstract class ContactModel {
     @Override
     public String toString() {
         return "ContactModel [id=" + id + ", name=" + name + ", address1=" + address1 + ", address2=" + address2
-                + ", city=" + city + ", zip=" + zip + ", state=" + state + ", phonenumber=" + phonenumber + ", email="
+                + ", city=" + city + ", zip=" + zip + ", state=" + state + ", phoneNumber=" + phoneNumber + ", email="
                 + email + ", imageUrl=" + imageUrl + "]";
     }
 
