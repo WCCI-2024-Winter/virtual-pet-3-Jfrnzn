@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.wecancodeit.Models.Enums.PetTypeEnum;
 import org.wecancodeit.Models.Enums.RoboticHealthEnum;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
@@ -74,6 +76,12 @@ public class RoboticPetModel extends PetModel {
     public ShelterModel getShelterModel() {
         return shelterModel;
     }
+
+    @JsonIgnore
+    public void setShelterModel(ShelterModel shelterModel) {
+        this.shelterModel = shelterModel;
+    }
+
 
     public RoboticHealthEnum getRoboticPetHealth() {
         return roboticPetHealth;

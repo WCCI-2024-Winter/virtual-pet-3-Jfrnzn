@@ -100,7 +100,7 @@ public class Populator implements CommandLineRunner {
                                 "adopter city", "12345", "oh", "9377371111", "adopterEmail.com", "adopter.jpg",
                                 PetTypeEnum.DOG, AdoptionStatusEnum.PENDING);
                 adoptersModel.setId(1l);
-                adoptersModel.saveShelterModel(shelterModel2);
+                // adoptersModel.saveShelterModel(shelterModel2);
                 adopterService.saveAdopter(adoptersModel);
 
                 VolunteerModel volunteerModel = new VolunteerModel("Volly", "123 Address", "Add 2", "VolunteerCity",
@@ -112,11 +112,13 @@ public class Populator implements CommandLineRunner {
                  * Organic Pet populator
                  */
 
-                OrganicPetModel organicPetModel = new OrganicPetModel("Dog1", PetTypeEnum.DOG, "border collie.jpg",
+                OrganicPetModel organicPetModel = new OrganicPetModel("Dog1", PetTypeEnum.DOG,
+                                "https://purrandmutt.com/cdn/shop/products/the-king-custom-vintage-pet-portrait-421602.jpg",
                                 "Border Collie", 2, PetHealthEnum.HEALTHY, PetMoodEnum.EXCITED,
                                 PetTempermentEnum.ACTIVE, true,
                                 null);
                 organicPetModel.setId(1l);
+                organicPetModel.setShelterModel(shelterModel4);
                 organicPetService.saveOrganicPet(organicPetModel);
 
                 // /**
@@ -124,10 +126,20 @@ public class Populator implements CommandLineRunner {
                 // */
 
                 RoboticPetModel roboticPetModel = new RoboticPetModel("RoboDog", PetTypeEnum.ROBOTIC_DOG,
-                                "istockphoto-1143731884-612x612.jpg", "thisPetModel", "theBestManufacturer",
+                                "https://as1.ftcdn.net/v2/jpg/03/31/02/74/1000_F_331027429_mLSNlEUafthRQp8XXXxokPmgDVkOob9R.jpg",
+                                "thisPetModel", "theBestManufacturer",
                                 50, 10, RoboticHealthEnum.NORMAL, null);
                 roboticPetModel.setId(1l);
+                roboticPetModel.setShelterModel(shelterModel4);
                 roboticPetService.saveRoboticPet(roboticPetModel);
+
+                RoboticPetModel roboticPetModel2 = new RoboticPetModel("RoboDog no 2", PetTypeEnum.ROBOTIC_DOG,
+                                "https://t4.ftcdn.net/jpg/05/56/09/81/240_F_556098117_GdiFN9p9j89dpt3JhLJsegV76tt1NhfA.jpg",
+                                "thisPetModel", "theBestManufacturer",
+                                50, 10, RoboticHealthEnum.NORMAL, null);
+                roboticPetModel2.setId(2l);
+                roboticPetModel2.setShelterModel(shelterModel4);
+                roboticPetService.saveRoboticPet(roboticPetModel2);
 
                 PetMaintenanceModel petMaintenanceModel = new PetMaintenanceModel("Feed", 10, PetTypeEnum.DOG,
                                 PetTaskEnum.FEED_PET);

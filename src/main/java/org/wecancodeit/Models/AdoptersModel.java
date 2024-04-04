@@ -14,56 +14,45 @@ import jakarta.validation.constraints.Size;
 @Table(name = "t_Adopters")
 public class AdoptersModel extends ContactModel {
 
-    public PetTypeEnum preferredPetType;
+    private PetTypeEnum preferredPetType;
     private AdoptionStatusEnum adoptionStatus;
 
     @ManyToOne
     private ShelterModel shelterModel;
 
+   
     public AdoptersModel() {
-        super();
     }
 
-    /**
-     * 
-     * @param name
-     * @param address1
-     * @param address2
-     * @param city
-     * @param zip
-     * @param state
-     * @param phoneNumber
-     * @param email
-     * @param imageUrl
-     * @param petType
-     * @param adoptionStatus
-     */
 
     public AdoptersModel(String name, String address1, String address2, String city,
-            @Size(max = 10, min = 5) String zip,
-            String state, String phoneNumber, String email, String imageUrl, PetTypeEnum petType,
-            AdoptionStatusEnum adoptionStatus) {
+            @Size(max = 10, min = 5) String zip, String state, String phoneNumber, String email, String imageUrl,
+            PetTypeEnum preferredPetType, AdoptionStatusEnum adoptionStatus) {
         super(name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
-        this.preferredPetType = petType;
+        this.preferredPetType = preferredPetType;
         this.adoptionStatus = adoptionStatus;
     }
-    @JsonIgnore
-    public void saveShelterModel(ShelterModel shelterModel){
-        this.shelterModel = shelterModel;
-    }
 
-    public AdoptersModel(PetTypeEnum petType) {
-        this.preferredPetType = petType;
-    }
 
-    public PetTypeEnum getPetType() {
+    public PetTypeEnum getPreferredPetType() {
         return preferredPetType;
     }
 
-    @Override
-    public String toString() {
-        return "AdoptersModel [preferredPetType=" + preferredPetType + ", adoptionStatus=" + adoptionStatus
-                + ", shelterModel=" + shelterModel + "]";
+
+    public AdoptionStatusEnum getAdoptionStatus() {
+        return adoptionStatus;
     }
 
+
+    public ShelterModel getShelterModel() {
+        return shelterModel;
+    }
+
+    
+  
+
+   
+    
+
+   
 }
