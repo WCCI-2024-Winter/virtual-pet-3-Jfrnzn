@@ -40,7 +40,7 @@ public class AdopterController {
     //     return adopterService.findByName(name, zip);
     // }
 
-    @GetMapping("{preferredPetType}")
+    @GetMapping("preferredPetType/{preferredPetType}")
     public Iterable<AdoptersModel> findByPreferredPetType(@PathVariable String preferredPetType
            /**, @PathVariable String zip*/) {
         return adopterService.findByPreferredPetType(preferredPetType/**, zip*/);

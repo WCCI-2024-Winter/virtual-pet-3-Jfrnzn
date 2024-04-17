@@ -13,20 +13,21 @@ public abstract class ContactModel {
     private long id;
     @Column(length = 50, nullable = false)
     private String name;
-    @Column(length = 150, nullable = false)
+    @Column(length = 150, nullable = true)
     private String address1;
-    @Column(length = 150, nullable = false)
+    @Column(length = 150, nullable = true)
     private String address2;
     @Column(length = 50, nullable = true)
     private String city;
     @Column(length = 10, nullable = true)
-    @Size(max = 10, min = 5)
+    /**removed the size constrait so zip can be null  */
+    // @Size(max = 10, min = 5)
     private String zip;
     @Column(length = 2, nullable = true)
     private String state;
     @Column(length = 10, nullable = true)
     private String phoneNumber;
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = true)
     private String email;
 
     private String imageUrl;

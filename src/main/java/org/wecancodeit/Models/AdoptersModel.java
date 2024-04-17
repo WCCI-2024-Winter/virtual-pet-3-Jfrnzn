@@ -20,39 +20,32 @@ public class AdoptersModel extends ContactModel {
     @ManyToOne
     private ShelterModel shelterModel;
 
-   
     public AdoptersModel() {
     }
 
-
     public AdoptersModel(String name, String address1, String address2, String city,
-            @Size(max = 10, min = 5) String zip, String state, String phoneNumber, String email, String imageUrl,
+            /**@Size(max = 10, min = 5)*/ String zip, String state, String phoneNumber, String email, String imageUrl,
             PetTypeEnum preferredPetType, AdoptionStatusEnum adoptionStatus) {
         super(name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
         this.preferredPetType = preferredPetType;
         this.adoptionStatus = adoptionStatus;
     }
 
-
     public PetTypeEnum getPreferredPetType() {
         return preferredPetType;
     }
-
 
     public AdoptionStatusEnum getAdoptionStatus() {
         return adoptionStatus;
     }
 
-
     public ShelterModel getShelterModel() {
         return shelterModel;
     }
 
-    
-  
+    @JsonIgnore
+    public void setShelterModel(ShelterModel shelterModel) {
+        this.shelterModel = shelterModel;
+    }
 
-   
-    
-
-   
 }
