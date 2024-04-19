@@ -78,7 +78,7 @@ public class Populator implements CommandLineRunner {
                                 "Townsville", "54321",
                                 "TX", "9876543210", "info@furryfriends.com", "furry-friends_5678-1234.avif",
                                 "https://www.furryfriends.org");
-                shelterModel.setId(2L);
+                shelterModel.setId(2l);
                 shelterService.saveShelter(shelterModel2);
 
                 // Shelter 3
@@ -86,7 +86,7 @@ public class Populator implements CommandLineRunner {
                                 "Villageville",
                                 "67890", "oh", "4567890123", "info@pawsome.org", "pawsome-refuge_9012-3456.avif",
                                 "https://www.pawsome.org");
-                shelterModel.setId(3L);
+                shelterModel.setId(3l);
                 shelterService.saveShelter(shelterModel3);
 
                 // Shelter 4
@@ -96,32 +96,40 @@ public class Populator implements CommandLineRunner {
                 shelterModel.setId(4l);
                 shelterService.saveShelter(shelterModel4);
 
-                AdoptersModel adoptersModel = new AdoptersModel("Adopter 1", "222 adopter st", "adopter 1nd address",
-                                "adopter city", "12345", "oh", "9377371111", "adopterEmail.com", "adopter.jpg",
-                                PetTypeEnum.DOG, AdoptionStatusEnum.PENDING);
-                adoptersModel.setId(1l);
-                adoptersModel.setShelterModel(shelterModel2);
-                adopterService.saveAdopter(adoptersModel);
-
-                AdoptersModel adoptersModel3 = new AdoptersModel("Adopter 3", "333 adopter st", "adopter 3nd address",
-                                "adopter city", "33333", "oh", "3333333333", "adopter3Email.com", "adopter.jpg",
-                                PetTypeEnum.CAT, AdoptionStatusEnum.DENIED);
-                adoptersModel.setId(3l);
-                adoptersModel.setShelterModel(shelterModel3);
-                adopterService.saveAdopter(adoptersModel3);
-
-                AdoptersModel adoptersModel4 = new AdoptersModel("Adopter 4", "123 adopter st", "adopter 4nd address",
-                                "adopter city", "44444", "oh", "4444444444", "adopter4Email.com", "adopter.jpg",
-                                PetTypeEnum.ROBOTIC_CAT, AdoptionStatusEnum.APPROVED);
-                adoptersModel.setId(4l);
-                adoptersModel.setShelterModel(shelterModel);
-                adopterService.saveAdopter(adoptersModel4);
-
                 VolunteerModel volunteerModel = new VolunteerModel("Volly", "123 Address", "Add 2", "VolunteerCity",
                                 "22222",
                                 "VA", "1234566789", "VolunteerEmail@gmail.com", "volunteer.jpg");
                 volunteerModel.setId(1l);
                 volunteerService.saveVolunteer(volunteerModel);
+
+                AdoptersModel adoptersModel2 = new AdoptersModel("Adopter 1", "222 adopter st", "adopter 1nd address",
+                                "adopter city", "12345", "oh", "9377371111", "adopterEmail.com", "adopter.jpg",
+                                PetTypeEnum.DOG, AdoptionStatusEnum.PENDING);
+                adoptersModel2.setId(2l);
+                adoptersModel2.setShelterModel(shelterModel2);
+                adopterService.saveAdopter(adoptersModel2);
+
+                AdoptersModel adoptersModel1 = new AdoptersModel("test 1", "222 adopter st", "adopter 1nd address",
+                                "adopter city", "12345", "oh", "9377371111", "adopterEmail.com", "adopter.jpg",
+                                PetTypeEnum.DOG, AdoptionStatusEnum.PENDING);
+                adoptersModel1.setId(1l);
+                adoptersModel1.setShelterModel(shelterModel2);
+                adopterService.saveAdopter(adoptersModel1);
+
+                AdoptersModel adoptersModel3 = new AdoptersModel("Adopter 3", "333 adopter st", "adopter 3nd address",
+                                "adopter city", "33333", "oh", "3333333333", "adopter3Email.com", "adopter.jpg",
+                                PetTypeEnum.CAT, AdoptionStatusEnum.DENIED);
+                adoptersModel3.setId(3l);
+                adoptersModel3.setShelterModel(shelterModel);
+                adopterService.saveAdopter(adoptersModel3);
+
+                AdoptersModel adoptersModel4 = new AdoptersModel("Adopter 4", "123 adopter st", "adopter 4nd address",
+                                "adopter city", "44444", "oh", "4444444444", "adopter4Email.com", "adopter.jpg",
+                                PetTypeEnum.ROBOTIC_CAT, AdoptionStatusEnum.APPROVED);
+                adoptersModel4.setId(4l);
+                adoptersModel4.setShelterModel(shelterModel3);
+                adopterService.saveAdopter(adoptersModel4);
+
                 /**
                  * Organic Pet populator
                  */
@@ -144,16 +152,14 @@ public class Populator implements CommandLineRunner {
                 organicPetModel.setShelterModel(shelterModel3);
                 organicPetService.saveOrganicPet(organicPetModel);
 
-                
                 OrganicPetModel organicPetModel3 = new OrganicPetModel("Dog2", PetTypeEnum.DOG,
-                                "https://purrandmutt.com/cdn/shop/products/the-king-custom-vintage-pet-portrait-421602.jpg",
+                                "src\\main\\border collie.jpg",
                                 "Border Collie", 2, PetHealthEnum.HEALTHY, PetMoodEnum.EXCITED,
                                 PetTempermentEnum.ACTIVE, true,
                                 null);
                 organicPetModel.setId(1l);
                 organicPetModel.setShelterModel(shelterModel2);
                 organicPetService.saveOrganicPet(organicPetModel);
-
 
                 // /**
                 // * Robotic Pet Populator
@@ -181,12 +187,12 @@ public class Populator implements CommandLineRunner {
                 petMaintenanceService.savePetMaintenance(petMaintenanceModel);
 
                 RoboticPetModel roboticPetModel3 = new RoboticPetModel("RoboDog", PetTypeEnum.ROBOTIC_DOG,
-                "src\\main\\istockphoto-1143731884-612x612.jpg",
-                "thisPetModel", "theBestManufacturer",
-                50, 10, RoboticHealthEnum.NORMAL, null);
-roboticPetModel.setId(1l);
-roboticPetModel.setShelterModel(shelterModel3);
-roboticPetService.saveRoboticPet(roboticPetModel);
+                                "src\\main\\istockphoto-1143731884-612x612.jpg",
+                                "thisPetModel", "theBestManufacturer",
+                                50, 10, RoboticHealthEnum.NORMAL, null);
+                roboticPetModel.setId(1l);
+                roboticPetModel.setShelterModel(shelterModel3);
+                roboticPetService.saveRoboticPet(roboticPetModel);
 
                 /**
                  * PetTaskSchedule Populator

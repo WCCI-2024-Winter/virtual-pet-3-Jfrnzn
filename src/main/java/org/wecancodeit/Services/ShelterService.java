@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.wecancodeit.DTO.ShelterLookUpDto;
 import org.wecancodeit.Models.ShelterModel;
 import org.wecancodeit.Repositories.ShelterRepository;
 
@@ -125,5 +126,18 @@ public class ShelterService {
             throw ex;
         }
         return shelter;
+    }
+
+    public Iterable<ShelterLookUpDto> getLookup() {
+        ArrayList<ShelterLookUpDto> lookup = new ArrayList<>();
+        try {
+            Iterable<ShelterModel> shelters = shelterRepository.findAll();
+            for (ShelterModel shelter : shelters) {
+                lookup.add(new ShelterLookUpDto(shelter));
+            }
+        } catch (Exception ex) {
+            throw ex;
+        }
+        return lookup;
     }
 }

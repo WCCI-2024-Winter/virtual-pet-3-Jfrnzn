@@ -2,6 +2,7 @@ package org.wecancodeit.Controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.wecancodeit.DTO.ShelterLookUpDto;
 import org.wecancodeit.Models.ShelterModel;
 import org.wecancodeit.Services.ShelterService;
 import jakarta.annotation.Resource;
@@ -26,6 +27,11 @@ public class ShelterController {
     @GetMapping
     public Iterable<ShelterModel> getAllShelters() {
         return shelterService.findAll();
+    }
+
+    @GetMapping("ShelterLookup")
+    public Iterable<ShelterLookUpDto> getShelterLookUp(){
+        return shelterService.getLookup();
     }
 
     @GetMapping("{id}")

@@ -1,6 +1,9 @@
 package org.wecancodeit.Models;
 
 import java.util.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
@@ -24,5 +27,15 @@ public class VolunteerModel extends ContactModel {
         super(name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
 
     }
+    @JsonIgnore
+    public Collection<ShelterModel> getShelterModel() {
+        return shelterModel;
+    }
+
+    public void setShelterModel(Collection<ShelterModel> shelterModel) {
+        this.shelterModel = shelterModel;
+    }
+
+    
 
 }

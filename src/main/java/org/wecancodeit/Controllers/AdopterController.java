@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.wecancodeit.DTO.AdopterDto;
 import org.wecancodeit.Models.AdoptersModel;
+import org.wecancodeit.Models.ShelterModel;
 import org.wecancodeit.Services.AdopterService;
 
 import jakarta.annotation.Resource;
@@ -31,8 +33,10 @@ public class AdopterController {
     }
 
     @GetMapping("{id}")
-    public AdoptersModel getAdopter(@PathVariable Long id) {
-        return adopterService.findById(id);
+    public AdopterDto getAdopter(@PathVariable Long id) {
+        AdoptersModel model= adopterService.findById(id);
+        AdopterDto dto = new AdopterDto(model);
+        return dto;
     }
 
     // @GetMapping("{name}/{zip}")
@@ -52,7 +56,8 @@ public class AdopterController {
     }
 
     @PostMapping
-    public AdoptersModel addAdopterModel(@RequestBody AdoptersModel adopterModel) {
+    public AdoptersModel addAdopterModel(@RequestBody AdopterDto adopterDto) {
+        AdoptersModel adopterModel = adopterDto.convertToModel();
         return adopterService.saveAdopter(adopterModel);
     }
 

@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "t_Shelter")
 
